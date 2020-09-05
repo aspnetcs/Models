@@ -1,0 +1,75 @@
+https://hyper.ai/datasets/4889
+ImageNet Dataset 是目前世界上最大的图像识别数据库，主要用于机器视觉领域的图像分类和目标检测，根据 WordNet 层次  结构 组织，其中每个节点由数百甚至数千张图像描绘，每个节点有平均超过 500 个图像，包含 2.2 万类约 1500 万张图片。
+
+ImageNet Dataset 由斯坦福大学的李飞飞等人于 2009 年在视觉科学学会首次发布，并在 2010 年起的 ImageNet 视觉识别挑战赛（ILSVRC）上不断完善。
+
+ImageNet.torrent
+856 做种 1078 下载 741 已完成
+README.md	1.22 KB
+README.txt	1.22 KB
+ILSVRC2010_devkit-1.0.tar.gz	2.89 MB
+ILSVRC2010_images_test.tar	15.28 GB
+ILSVRC2010_images_train.tar	123.92 GB
+ILSVRC2010_images_val.tar	5.03 GB
+patch_images.tar	6.84 MB
+ILSVRC2011_bbox_train.v2.tar	320.13 MB
+ILSVRC2011_bbox_val.v3.tar	50.98 MB
+ILSVRC2011_devkit-2.0.tar.gz	2.65 MB
+ILSVRC2011_images_test.tar	10.41 GB
+ILSVRC2011_images_train.tar	110.56 GB
+ILSVRC2011_images_val.tar	5.19 GB
+ILSVRC2012_bbox_test_dogs.zip	32.97 MB
+ILSVRC2012_bbox_train_dogs.tar.gz	709.1 KB
+ILSVRC2012_bbox_train_v2.tar.gz	19.9 MB
+ILSVRC2012_bbox_val_v3.tgz	2.12 MB
+ILSVRC2012_devkit_t12.tar.gz	2.45 MB
+ILSVRC2012_devkit_t3.tar.gz	21.41 MB
+ILSVRC2012_img_test.tar	12.75 GB
+ILSVRC2012_img_train.tar	137.74 GB
+ILSVRC2012_img_train_t3.tar	727.14 MB
+ILSVRC2012_img_val.tar	6.28 GB
+ILSVRC2012_bbox_train_v2.tar.gz	19.9 MB
+ILSVRC2012_bbox_val_v3.tgz	2.12 MB
+ILSVRC2013_DET_bbox_train.tgz	10.7 MB
+ILSVRC2013_DET_bbox_val.tgz	1.31 MB
+ILSVRC2013_DET_test.tar	5.09 GB
+ILSVRC2013_DET_train.tar	39.49 GB
+ILSVRC2013_DET_val.tar	2.52 GB
+ILSVRC2013_DETextra_train.tar	13.04 GB
+ILSVRC2013_devkit.tgz	7.78 MB
+ILSVRC2012_bbox_train_v2.tar.gz	19.9 MB
+ILSVRC2012_bbox_val_v3.tgz	2.12 MB
+ILSVRC2013_DET_bbox_val.tgz	1.31 MB
+ILSVRC2013_DET_test.tar	5.09 GB
+ILSVRC2013_DET_val.tar	2.52 GB
+ILSVRC2014_DET_bbox_train.tgz	14.04 MB
+ILSVRC2014_DET_train.tar	46.68 GB
+ILSVRC2014_DETaugment2013_train.tar	7.19 GB
+ILSVRC2014_DETaugmentCLSLOC_train.tar	20.22 GB
+ILSVRC2014_devkit.tgz	38.33 MB
+ILSVRC2015_DET_test.tar.gz	5.93 GB
+ILSVRC2015_DET_test_new.tar.gz	913.39 MB
+ILSVRC2015_devkit.tar.gz	7.42 MB
+ILSVRC2015_VID.tar.gz	85.74 GB
+ILSVRC2015_VID_final.tar.gz	42.16 GB
+ILSVRC2015_VID_initial.tar.gz	21.09 GB
+ILSVRC2015_VID_snippets_final.tar.gz	7.77 GB
+ILSVRC2015_VID_snippets_initial.tar.gz	14.72 GB
+ILSVRC2015_devkit.tar.gz	11.06 MB
+ILSVRC2016_DET_test_new.tar.gz	757.61 MB
+ILSVRC2016_devkit.tar.gz	16.21 MB
+ILSVRC2016_VID_test.tar.gz	35.62 GB
+ILSVRC2016_VID_test_new.tar.gz	18.88 GB
+ILSVRC2017_DET_test_new.tar.gz	427.96 MB
+ILSVRC2017_VID_new.tar.gz	20.66 GB
+ILSVRC2017_VID_test.tar.gz	35.62 GB
+相关数据集推荐
+xBD 自然灾害图像数据集
+1 周前
+xBD 数据集是迄今为止第一个建筑破坏评估数据集，是带注释的高分辨率卫星图像的规模最大、质量最高的公共数据集之一。 该数据集包含 22068 张图像，均是 1024*1024 的高分辨率卫星遥感图像，标记有 19 种不同的事件，包括地震，洪水，野火、火山爆发和车祸等。这些图像包括…
+MNIST 手写数字数据集
+2 年前
+MNIST Dataset 是一个手写数字数据集，其包含 60,000 个示例训练集和 10,000 个示例测试集，它主要用于机器视觉领域的图像分类，该数据集中的数字已经过尺寸标准化处理，并以固定尺寸的图像为中心。 MNIST Dataset 由纽约大学库兰特研究所、谷歌纽约实验…
+The Unsplash Lite Dataset 图片检索数据集精简版
+3 周前
+Unsplash 是世界上最大的图片摄影网站之一，由全世界 20 多万摄影师参与贡献了数百万张高清优质的摄影作品。 Unsplash 在 2016 年开放了图片 API，截止目前已经达到了每月百万次调用，以及各种不同的使用场景。Unsplash 数据集于 2020 年八月宣布开放…
