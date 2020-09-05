@@ -1,0 +1,166 @@
+打包 压缩 命令tar zip
+https://www.cnblogs.com/centos2017/p/7896807.html
+
+tar语法
+
+#压缩
+tar -czvf ***.tar.gz
+tar -cjvf ***.tar.bz2
+#解压缩
+tar -xzvf ***.tar.gz
+tar -xjvf ***.tar.bz2
+
+ 
+
+　tar  [主选项+辅选项] 文件或目录
+主选项是必须要有的，它告诉tar要做什么事情。
+辅选项是辅助使用的，可以选用。
+
+tar常用命令：
+
+主选项：
+-x    从档案文件中释放文件。
+-c    创建新的档案文件。如果用户想备份一个目录或是一些文件，就要选择这个选项。
+-r     把要存档的文件追加到档案文件的末尾。例如用户已经做好备份文件，又发现还有一个目录或
+         是一些文件忘 记备份了，这时可以使用该选项，将忘记的目录或文件追加到备份文件中。
+-t       列出档案文件的内容，查看已经备份了哪些文件。
+-u      更新文件。就是说，用新增的文件取代原备份文件，如果在备份文件中找不到要更新的文件，
+          则把它追加到备份文件的最后。
+
+辅助选项：
+-j         代表使用‘bzip2’程序进行文件的压缩    tar.bz2
+-z       用gzip来压缩/解压缩文件，加上该选项后可以将档案文件进行压缩，但还原时也一定要使用该
+            选项进行解压缩。   tar.gz
+-v       详细报告tar处理的文件信息。如无此选项，tar不报告文件信息。
+-b     该选项是为磁带机设定的，其后跟一数字，用来说明区块的大小，系统预设值为20（20×512 bytes）。
+-f       使用档案文件或设备，这个选项通常是必选的。
+-k       保存已经存在的文件。例如把某个文件还原，在还原的过程中遇到相同的文件，不会进行覆盖。
+-m       在还原文件时，把所有文件的修改时间设定为。
+-M      创建多卷的档案文件，以便在几个磁盘中存放。
+-w           每一步都要求确认。
+
+tar包管理
+1、tar包的创建
+tar -cvf  file.tar file1  file2
+tar -zcvf  file.tar.gz  file1  file2
+tar -jcvf   file.tar.bz2  file1  file2
+
+2、tar包的查看
+tar -tvf  file.tar
+tar -ztvf  file.tar.gz
+tar -jtvf  file.tar.bz2
+
+3、释放tar包
+tar -xvf  file.tar
+tar -zxvf  file.tar.gz
+tar -jxvf  file.tar.bz2
+
+ 
+
+ 
+ 
+补充一点   如果需要打包一个文件夹，但其中的几个文件不需要打包，命令如下
+打包test文件夹      test里的  1  这个文件夹不需要打包
+[root@localhost /]# cd /usr/test
+[root@localhost test]# ls
+1  2  3
+ 
+返回/usr 目录
+[root@localhost test]# cd /usr
+[root@localhost usr]# tar -zcvf test.tar.gz --exclude=test/1 test
+test/
+test/3/
+test/3/333.png
+test/2/
+test/2/222.png
+ 
+果然没有打包test/1 文件夹 
+ 
+[root@localhost usr]# tar -zcvf test.tar.gz --exclude=test/1 test
+                                                  打包命令    包名字      排除文件(注意路径)    打包文件
+ 
+ 
+
+范例一：将整个 /etc 目录下的档案全部打包成为 /tmp/etc.tar
+
+[root@linux ~]# tar -cvf /tmp/etc.tar /etc  <==仅打包，不压缩！
+
+[root@linux ~]# tar -czvf /tmp/etc.tar.gz /etc  <==打包后，以 gzip 压缩
+
+[root@linux ~]# tar -cjvf /tmp/etc.tar.bz2 /etc  <==打包后，以 bzip2 压缩
+# 特别注意，在参数 f 之后的档案档名是自己取的，我们习惯上都用 .tar 来作为辨识。
+
+# 如果加 z 参数，则以 .tar.gz 或 .tgz 来代表 gzip 压缩过的 tar file ～
+
+# 如果加 j 参数，则以 .tar.bz2 来作为附档名啊～
+
+# 上述指令在执行的时候，会显示一个警告讯息：
+
+# 『tar: Removing leading `/' from member names 』那是关于绝对路径的特殊设定。
+
+ 
+
+范例二：查阅上述 /tmp/etc.tar.gz 档案内有哪些档案？
+
+[root@linux ~]# tar -tzvf /tmp/etc.tar.gz 
+# 由于我们使用 gzip 压缩，所以要查阅该 tar file 内的档案时，
+
+# 就得要加上 z 这个参数了！这很重要的！
+
+ 
+
+范例三：将 /tmp/etc.tar.gz 档案解压缩在 /usr/local/src 底下
+
+[root@linux ~]# cd /usr/local/src
+
+[root@linux src]# tar -xzvf /tmp/etc.tar.gz
+# 在预设的情况下，我们可以将压缩档在任何地方解开的！以这个范例来说，
+
+# 我先将工作目录变换到 /usr/local/src 底下，并且解开 /tmp/etc.tar.gz ，
+
+# 则解开的目录会在 /usr/local/src/etc 呢！另外，如果您进入 /usr/local/src/etc
+
+# 则会发现，该目录下的档案属性与 /etc/ 可能会有所不同喔！
+
+ 
+
+范例四：在 /tmp 底下，我只想要将 /tmp/etc.tar.gz 内的 etc/passwd 解开而已
+
+[root@linux ~]# cd /tmp
+
+[root@linux tmp]# tar -xzvf /tmp/etc.tar.gz etc/passwd
+# 我可以透过 tar -tzvf 来查阅 tarfile 内的文件名称，如果单只要一个档案，
+
+# 就可以透过这个方式来下达！注意到！ etc.tar.gz 内的根目录 / 是被拿掉了！
+
+ 
+
+范例五：将 /etc/ 内的所有档案备份下来，并且保存其权限！
+
+[root@linux ~]# tar -czvpf /tmp/etc.tar.gz /etc
+# 这个 -p 的属性是很重要的，尤其是当您要保留原本档案的属性时！
+
+ 
+
+范例六：在 /home 当中，比 2005/06/01 新的档案才备份
+
+[root@linux ~]# tar -N '2005/06/01' -czvf home.tar.gz /home
+ 
+
+范例七：我要备份 /home, /etc ，但不要 /home/dmtsai
+
+[root@linux ~]# tar --exclude /home/dmtsai -czvf myfile.tar.gz /home/* /etc
+ 
+
+范例八：将 /etc/ 打包后直接解开在 /tmp 底下，而不产生档案！
+
+[root@linux ~]# cd /tmp
+
+[root@linux tmp]# tar -cvf - /etc | tar -xvf -
+# 这个动作有点像是 cp -r /etc /tmp 啦～依旧是有其有用途的！
+
+# 要注意的地方在于输出档变成 - 而输入档也变成 - ，又有一个 | 存在～
+
+# 这分别代表 standard output, standard input 与管线命令啦！
+
+# 这部分我们会在 Bash shell 时，再次提到这个指令跟大家再解释啰！
